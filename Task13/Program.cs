@@ -3,24 +3,48 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-Console.WriteLine("введите любое трехзначное число");
-int i = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("введите любое число");
+int number = Convert.ToInt32(Console.ReadLine());
 int thirdDigit;
 
-
-if (i < 0) 
-{
-    i = i * -1;
-} 
-char[] arr = i.ToString().ToCharArray();
-
-if (Array < 2)
+if (number > -99 && number < 100) 
 {
     Console.WriteLine("третьей цифры нет");
 }
-     
+
 else 
 {
-     thirdDigit = Array[2];
-     Console.WriteLine((thirdDigit));
+    if (number > 99 && number < 1000) 
+    {
+        thirdDigit = number % 10;
+        Console.WriteLine((thirdDigit));
+    }
+
+    if (number < -99 && number > -1000) 
+    {
+        number = number * -1;
+        thirdDigit = number % 10;
+        Console.WriteLine((thirdDigit));
+    }
+
+    if (number > 999) 
+    {
+        while (number > 999) 
+        {
+            number = number / 10;
+        }
+        thirdDigit = number % 10;
+        Console.WriteLine((thirdDigit));
+    }
+
+    if (number < -999) 
+    {
+        while (number < -999) 
+        {
+            number = number / 10;
+        }
+        number = number * -1;
+        thirdDigit = number % 10;
+        Console.WriteLine((thirdDigit));
+    }
 }
